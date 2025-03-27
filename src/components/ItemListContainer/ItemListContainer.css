@@ -1,0 +1,22 @@
+.item-list-container {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #f0f9ff; /* Un azul claro */
+  border: 2px solid #cceeff; /* Borde más notorio */
+  border-radius: 8px;
+}
+
+.item-list-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #0d3b66;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
