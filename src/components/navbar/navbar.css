@@ -1,83 +1,92 @@
-.nav {
+.navbar {
   display: flex;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0rem 2rem;
-  background-color: #f5f5f5;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Fija el navbar en la parte superior */
-  top: 0; /* Asegura que esté en la parte superior */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fefefe;
+  border-bottom: 1px solid #ccc;
 }
 
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0rem;
-}
-
-.logo {
+.navbar-left .logo {
+  font-size: 1.8rem;
+  color: #0d3b66;
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
 }
 
-.subTitle {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.nav-menu {
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
-.search-container {
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0d3b66;
+}
+
+.navbar-right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .search-input {
+  width: 200px;
   padding: 0.5rem;
-  border-radius: 4px;
   border: 1px solid #ccc;
-  outline: none;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  width: 300px;
+  border-color: #0d3b66;
 }
 
 .search-button {
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #333;
+  background-color: #0d3b66;
   color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
   cursor: pointer;
 }
 
-.button-container {
-  display: flex;
-  gap: 1rem;
+.search-button:hover {
+  background-color: #1d4f91;
 }
 
 .session-button {
   padding: 0.5rem 1rem;
-  border: 1px solid #333;
   background-color: transparent;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.session-button:hover {
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 .cart-button {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: #fff;
+  background: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem;
+}
+
+.cart-button:hover {
+  background-color: #1d4f91;
 }
