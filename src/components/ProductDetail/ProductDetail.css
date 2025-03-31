@@ -1,0 +1,14 @@
+/* ProductDetail.css */
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.product-detail img {
+  width: 200px;
+  border-radius: 5px;
+}
