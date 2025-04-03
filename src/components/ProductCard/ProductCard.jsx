@@ -1,7 +1,7 @@
 // src/components/ProductCard/ProductCard.jsx
 import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from '../../../src/components/context/CartContext'
+import { CartContext } from '../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 import './ProductCard.css'
 

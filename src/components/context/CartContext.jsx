@@ -39,6 +39,7 @@ export function CartProvider({ children }) {
 
   // Cantidad total de ítems en el carrito (para mostrar en el widget)
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0)
+  const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0)
 
   // 3) Devolvemos el Provider, que hace disponible el valor a los children
   return (
@@ -48,7 +49,8 @@ export function CartProvider({ children }) {
         addItem, 
         removeItem, 
         clearCart, 
-        totalQuantity 
+        totalQuantity,
+        totalPrice
       }}
     >
       {children}

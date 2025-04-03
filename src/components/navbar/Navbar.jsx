@@ -3,22 +3,19 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import CartWidget from '../cartWidget/CartWidget'
-import { CartContext } from '../../../src/components/context/CartContext'
+import { CartContext } from '../context/CartContext'
+
 
 function Navbar() {
-  // Extraemos totalQuantity del contexto
   const { totalQuantity } = useContext(CartContext)
 
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <h1 className="logo">
-          <Link to="/">EL CHINO</Link>
-        </h1>
+        <Link to="/" className="logo">EL CHINO</Link>
       </div>
 
       <ul className="nav-links">
-        {/* Tus links */}
         <li><Link className="nav-link" to="/cervezas">Cervezas</Link></li>
         <li><Link className="nav-link" to="/vinos">Vinos</Link></li>
         <li><Link className="nav-link" to="/licores">Licores</Link></li>
@@ -30,9 +27,9 @@ function Navbar() {
         <button className="search-button">Buscar</button>
         <button className="session-button">Iniciar Sesión</button>
 
-        {/* Ícono carrito que muestra la cantidad global */}
+        {/* Enlace que redirige al carrito */}
         <Link className="cart-button" to="/cart">
-          <CartWidget count={totalQuantity} />
+          <CartWidget count={totalQuantity}/>
         </Link>
       </div>
     </nav>
