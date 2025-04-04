@@ -1,6 +1,7 @@
 // src/components/ProductList/ProductList.jsx
 import React, { useEffect, useState } from 'react'
-import { getProducts } from '../../data/mockProducts'
+// import { getProducts } from '../../data/mockProducts'
+import { getProducts } from '../../services/firebase/products'
 import ProductCard from '../ProductCard/ProductCard'
 import './ProductList.css'
 
@@ -8,8 +9,11 @@ function ProductList() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    getProducts().then(data => setProducts(data))
-  }, [])
+  getProducts()
+    .then(data => {setProducts(data)})
+    .catch(error => {console.error("Error al obtener productos:", error)})
+}, [])
+
 
   return (
     <section className="product-list">
