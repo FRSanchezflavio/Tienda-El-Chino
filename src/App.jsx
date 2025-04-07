@@ -30,6 +30,7 @@ function App() {
         />
         {/* Otras rutas, por ejemplo la del carrito */}
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>
     </div>
   )
