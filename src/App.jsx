@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ProductList from './components/ProductList/ProductList'
 import Cart from '../src/components/Cart/Cart'
+import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 
 
 function App() {

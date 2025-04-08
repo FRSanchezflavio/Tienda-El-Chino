@@ -1,6 +1,6 @@
 // src/components/cart/Cart.jsx
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import { createOrder } from '../../services/firebase/orders'
 
@@ -11,6 +11,8 @@ function Cart() {
   const [buyerName, setBuyerName] = useState('')
   const [buyerPhone, setBuyerPhone] = useState('')
   const [buyerEmail, setBuyerEmail] = useState('')
+
+  const navigate = useNavigate()
 
   const handleCheckout = async () => {
     const orderData = {
@@ -26,6 +28,7 @@ function Cart() {
     try {
       const orderId = await createOrder(orderData)
       console.log("Orden creada con ID:", orderId)
+      navigate('/order-confirmation', { state: { orderId } })
       clearCart()
     } catch (error) {
       console.error("Error creando la orden:", error)
