@@ -1,6 +1,10 @@
 // src/components/cart/Cart.jsx
 import React, { useContext, useState } from 'react'
+<<<<<<< HEAD
 import { Link, useNavigate } from 'react-router-dom'
+=======
+import { Link,useNavigate } from 'react-router-dom'
+>>>>>>> 31ddb7cf6752f65e34527af92e26c16e9b8cb8c0
 import { CartContext } from '../context/CartContext'
 import { createOrder } from '../../services/firebase/orders'
 

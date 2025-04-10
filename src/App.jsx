@@ -5,7 +5,10 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ProductList from './components/ProductList/ProductList'
 import Cart from '../src/components/Cart/Cart'
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
+<<<<<<< HEAD
 import ProductDetail from './components/ProductDetail/ProductDetail'
+=======
+>>>>>>> 31ddb7cf6752f65e34527af92e26c16e9b8cb8c0
 
 
 function App() {
