@@ -1,11 +1,11 @@
-// src/App.jsx
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ProductList from './components/ProductList/ProductList'
 import Cart from '../src/components/Cart/Cart'
+import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
+import ProductDetail from './components/ProductDetail/ProductDetail'
 
 
 function App() {
@@ -28,7 +28,10 @@ function App() {
             </>
           } 
         />
-        {/* Otras rutas, por ejemplo la del carrito */}
+        <Route 
+          path="/detail/:id" 
+          element={<ProductDetail />} 
+        />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>

@@ -1,4 +1,3 @@
-// src/data/mockProducts.js
 
 const products = [
   {

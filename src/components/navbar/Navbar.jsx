@@ -1,4 +1,3 @@
-// src/components/navbar/Navbar.jsx
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
@@ -27,7 +26,6 @@ function Navbar() {
         <button className="search-button">Buscar</button>
         <button className="session-button">Iniciar Sesión</button>
 
-        {/* Enlace que redirige al carrito */}
         <Link className="cart-button" to="/cart">
           <CartWidget count={totalQuantity}/>
         </Link>

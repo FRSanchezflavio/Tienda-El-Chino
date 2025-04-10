@@ -1,16 +1,17 @@
 // src/components/cart/Cart.jsx
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import { createOrder } from '../../services/firebase/orders'
 
 function Cart() {
   const { cart, clearCart, removeItem, totalQuantity, totalPrice } = useContext(CartContext)
 
-  // 1) Creamos estados para los datos del comprador
   const [buyerName, setBuyerName] = useState('')
   const [buyerPhone, setBuyerPhone] = useState('')
   const [buyerEmail, setBuyerEmail] = useState('')
+
+  const navigate = useNavigate()
 
   const handleCheckout = async () => {
     const orderData = {
@@ -26,6 +27,7 @@ function Cart() {
     try {
       const orderId = await createOrder(orderData)
       console.log("Orden creada con ID:", orderId)
+      navigate('/order-confirmation', { state: { orderId } })
       clearCart()
     } catch (error) {
       console.error("Error creando la orden:", error)
@@ -67,7 +69,6 @@ function Cart() {
         <h3>Precio total: ${totalPrice}</h3>
       </div>
 
-      {/* Formulario para ingresar datos del comprador */}
       <div style={{ marginTop: '2rem' }}>
         <h3>Completa tus datos para finalizar la compra</h3>
         <div style={{ marginBottom: '1rem' }}>

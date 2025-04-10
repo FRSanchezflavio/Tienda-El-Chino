@@ -1,13 +1,10 @@
 import React from 'react'
-// Si instalaste react-icons, importamos un ícono de carrito:
 import { FaShoppingCart } from 'react-icons/fa'
 
 function CartWidget({ count = 0 }) {
   return (
     <div style={styles.container}>
-      {/* Ícono de carrito */}
       <FaShoppingCart style={styles.icon} />
-      {/* Contador de items. Si count es mayor que 0, muestra el número. */}
       {count > 0 && (
         <span style={styles.badge}>{count}</span>
       )}

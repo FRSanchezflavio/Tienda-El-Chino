@@ -1,6 +1,4 @@
-// src/components/ProductList/ProductList.jsx
 import React, { useEffect, useState } from 'react'
-// import { getProducts } from '../../data/mockProducts'
 import { getProducts } from '../../services/firebase/products'
 import ProductCard from '../ProductCard/ProductCard'
 import './ProductList.css'
@@ -20,7 +18,6 @@ function ProductList() {
       <h2>Catálogo de Productos</h2>
       <div className="product-grid">
         {products.map(product => (
-          // Ya no necesitamos onAddToCart
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

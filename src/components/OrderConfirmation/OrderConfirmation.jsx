@@ -1,14 +1,17 @@
-// src/components/OrderConfirmation/OrderConfirmation.jsx
 import React from 'react'
 import { useLocation, Link } from 'react-router-dom'
 
 function OrderConfirmation() {
-  const location = useLocation()
-  // Asumimos que pasamos el orderId como parte de location.state
-  const { orderId } = location.state || {}
-
+  const { state } = useLocation()
+  const orderId = state?.orderId
+  
   if (!orderId) {
-    return <p>No hay ninguna orden generada.</p>
+    return (
+      <div style={{ textAlign: 'center', padding: '2rem' }}>
+        <h2>No hay ninguna orden generada</h2>
+        <Link to="/">Volver a la tienda</Link>
+      </div>
+    )
   }
 
   return (
